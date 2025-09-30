@@ -14,15 +14,18 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.martinmekyna.at/">
   <meta property="og:image" content="https://www.martinmekyna.at/favicon.svg">
+  <link rel="canonical" href="https://www.martinmekyna.at/">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Seite als Spalte, Footer unten, Inhalt separat vertikal zentriert */
+    /* Grundlayout: Footer unten, Inhalt zentriert */
     body{
       margin:0;
-      font-family:Oswald,'Source Sans Pro', Arial, sans-serif;
+      font-family:'Source Sans Pro', Arial, sans-serif;
       min-height:100vh;
       display:flex;
       flex-direction:column;
@@ -31,45 +34,76 @@
       text-align:center;
     }
     .hero{
-      flex:1; /* nimmt den verfügbaren Platz ein */
+      flex:1;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center; /* zentriert vertikal */
+      justify-content:center;
+      row-gap:4px;              /* sehr enger Abstand zwischen h1 & h2 */
       padding:0 1rem;
     }
 
-    h1{font-size:2.5rem;margin:0;line-height:1.0;font-weight:700;text-transform:uppercase}
+    /* Headline: Oswald Bold, kompakt */
+    h1{
+      font-family:'Oswald', Arial, sans-serif;
+      font-size:2.5rem;
+      margin:0;
+      line-height:1.0;
+      font-weight:700;
+      text-transform:uppercase;
+    }
     h1 .martin{color:#605E5E}
     h1 .mekyna{color:#A0A09F}
-    h2{font-size:1.1rem;font-weight:400;margin:0 0 1.5em 0}
 
-    .icons{display:flex;gap:18px;justify-content:center;align-items:center}
+    /* Subline: Oswald Light/Regular sehr nah an h1 */
+    h2{
+      font-family:'Oswald', Arial, sans-serif;
+      font-size:1.1rem;
+      font-weight:300;          /* Light; bei Bedarf auf 400 ändern */
+      margin:0;                 /* Abstand kommt zentral über row-gap */
+      text-transform:uppercase;
+    }
+
+    /* Icons: mehr Luft NACH h2 (bewusst hier gesetzt) */
+    .icons{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      align-items:center;
+      margin-top:1.1em;         /* größerer Abstand h2 → Icons */
+    }
     .circle{
       width:34px;height:34px;border-radius:50%;
       background:#37423D;color:#fff;
       display:flex;align-items:center;justify-content:center;
-      transition:background .3s;font-weight:bold
+      transition:background .3s;
+      font-weight:bold;
     }
     .icons a:hover .circle{background:#2f9e8c}
     .circle i{font-size:1.1rem;color:#fff}
     .circle svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2}
 
+    /* Footer dezent, immer unten */
     footer{
       padding:20px 0 12px;
       font-size:.85rem;
-      color:#A0A09F; /* wie MEKYNA */
+      color:#A0A09F;
     }
     footer a{color:#A0A09F;text-decoration:none;margin:0 8px}
     footer a:hover{text-decoration:underline}
+
+    /* Kleine Glättung für Mobilgeräte */
+    @media (max-width: 420px){
+      h1{font-size:2.2rem}
+      .circle{width:32px;height:32px}
+    }
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-  <!-- zentrierter Bereich -->
   <main class="hero">
     <h1><span class="martin">MARTIN</span><span class="mekyna">MEKYNA</span></h1>
     <h2>Organisationsentwicklung, Transformation &amp; Change</h2>
@@ -83,12 +117,15 @@
           </svg>
         </div>
       </a>
-      <a href="https://www.integratedconsulting.at/" target="_blank" rel="noopener" aria-label="ICG"><div class="circle">ICG</div></a>
-      <a href="https://www.linkedin.com/in/martinmekyna/" target="_blank" rel="noopener" aria-label="LinkedIn"><div class="circle"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div></a>
+      <a href="https://www.integratedconsulting.at/" target="_blank" rel="noopener" aria-label="ICG">
+        <div class="circle">ICG</div>
+      </a>
+      <a href="https://www.linkedin.com/in/martinmekyna/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <div class="circle"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
+      </a>
     </div>
   </main>
 
-  <!-- Footer bleibt unten, dezent -->
   <footer>
     <a href="https://www.wkoecg.at/Web/Ecg.aspx?FirmaID=8c9f6b23-7331-48ca-bb29-34448aa3a4fd" target="_blank" rel="noopener">Impressum</a> |
     <a href="https://www.wko.at/oe/information-consulting/unternehmensberatung-buchhaltung-informationstechnologie/unternehmensberatung/unternehmensberatung-agb.pdf" target="_blank" rel="noopener">AGB</a> |
